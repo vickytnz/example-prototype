@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a not a real service – it is just for user research.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="date-saw-goose" method="post">
+
+        {{ govukInput({
+    label: {
+      text: "What type of goose was it?",
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    id: "goose-type",
+    name: "goose-type"
+  }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

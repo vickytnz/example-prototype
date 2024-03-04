@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers - Record a goose sighting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a not a real service – it is just for user research.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+        Check your answers before sending your application
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "You like geese"
+            },
+            value: {
+              text:  data['geese-liked']
+            },
+            actions: {
+              items: [
+                {
+                  href: "geese-liked",
+                  text: "Change",
+                  visuallyHiddenText: "if you like geese"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Type of goose that you saw"
+            },
+            value: {
+              text: data['goose-type']
+            },
+            actions: {
+              items: [
+                {
+                  href: "goose-type",
+                  text: "Change",
+                  visuallyHiddenText: "type of goose that you saw"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date that you saw the goose"
+            },
+            value: {
+              text: data['date-saw-goose-day'] +  " / " + data['date-saw-goose-month'] +   " / " +  data['date-saw-goose-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "date-saw-goose",
+                  text: "Change",
+                  visuallyHiddenText: "date that you saw the goose"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Now send your application
+      </h2>
+
+      <p>
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+
+      {{ govukDetails({
+       summaryText: "What happens with my data?",
+       text: "Nothing - this doesn't actually do or collect anything. You'll have to store your own goose records unfortunately."
+     }) }}
+
+      <form action="/base/form/confirmation" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

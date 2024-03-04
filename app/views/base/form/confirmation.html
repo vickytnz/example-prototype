@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a not a real service – it is just for user research.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Report complete",
+        html: "Your reference number<br><strong>HDJ2123F</strong>"
+      }) }}
+
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        We've sent your application to the RSPD.
+      </p>
+
+      <P><a href="/base/guide/report-goose-sighting">Back to GOV.UK</a></p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

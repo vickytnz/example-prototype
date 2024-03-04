@@ -1,0 +1,102 @@
+{% set serviceName = "" %}
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block header %}
+
+
+<div class="browse govuk-!-margin-bottom-8"">
+  {{ super() }}
+
+<div class="govuk-width-container ">
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a not a real service – it is just for user research.'
+  }) }}
+
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-breadcrumbs--inverse govuk-!-margin-bottom-8",
+      items: [
+        {
+          text: "Home",
+          href: "#"
+        },
+        {
+          text: "Environment and the countryside",
+          href: "browse"
+        }
+      ]
+    }) }}
+
+  </div>
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Wildlife and biodiversity</h1>
+    <p class="govuk-body-l govuk-!-margin-bottom-8" >Protected species, report a sighting
+
+
+
+</p>
+
+</div>
+      </div>
+</div>
+</div>
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-column-{% if fullWidth %}full-width{% else %}two-thirds{% endif %}">
+
+  <h2 class="govuk-heading-m">A to Z</h2>
+
+
+
+
+
+
+
+
+
+<ul class="govuk-list">
+<li class="govuk-!-margin-bottom-4"><a href="#">Find protected areas of countryside</a></li>
+<li class="govuk-!-margin-bottom-4"><a href="#">Licence to release non-native wildlife and plants</a></li>
+<li class="govuk-!-margin-bottom-4"><a href="#">Managing wildlife on your land</a></li>
+<li class="govuk-!-margin-bottom-4"><a href="guide/index">Report an animal sighting</a></li>
+<!--
+<li class="govuk-!-margin-bottom-4"><a href="#">Report a dead or injured animal</a></li>
+<li class="govuk-!-margin-bottom-4"><a href="#">Report a stranded whale or dolphin</a></li>
+-->
+<li class="govuk-!-margin-bottom-4"><a href="#">Wildlife licence (Northern Ireland)</a></li>
+</ul>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

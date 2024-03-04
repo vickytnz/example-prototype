@@ -1,6 +1,93 @@
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+//
 
 // Add extra styles here
+
+.browse, .browse .govuk-phase-banner__text {
+  background: #263135;
+  color:  white;
+}
+
+.browse h1, .browse p {
+  color: govuk-colour("white");
+}
+
+.browse .govuk-header {
+  border-bottom: 10px solid #263135;
+}
+
+
+//
+
+.gem-c-cards__list-item {
+    border-top: 1px solid #b1b4b6;
+    margin: 0 15px;
+    padding: 5px 0 20px 0;
+}
+
+.gem-c-cards__list-item-wrapper {
+    padding: 10px 30px 10px 0;
+    position: relative;
+}
+
+
+.gem-c-cards__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 -15px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 40.0625em){
+.gem-c-cards__list {
+    grid-template-columns: 1fr 1fr;
+}}
+
+@media (min-width: 48.0625em) {
+.gem-c-cards__list {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 50%;
+}}
+
+
+@media (min-width: 48.0625em){
+@supports (display: grid) {
+.gem-c-cards__list {
+    width: initial;
+}}}
+
+@media (min-width: 48.0625em) {
+@supports (display: grid){
+.gem-c-cards__list {
+    width: initial;
+}
+}
+}
+
+.gem-c-cards__link::after {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.gem-c-cards__link::before {
+    border-right: 3px solid #1d70b8;
+    border-top: 3px solid #1d70b8;
+    content: "";
+    height: 7px;
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    -webkit-transform: translateY(0) rotate(45deg) scale(1);
+    -ms-transform: translateY(0) rotate(45deg) scale(1);
+    transform: translateY(0) rotate(45deg) scale(1);
+    width: 7px;
+  }

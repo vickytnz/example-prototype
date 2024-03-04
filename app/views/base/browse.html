@@ -1,0 +1,143 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block header %}
+
+
+<div class="browse govuk-!-margin-bottom-8"">
+  {{ super() }}
+
+<div class="govuk-width-container ">
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a not a real service – it is just for user research.'
+  }) }}
+
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-breadcrumbs--inverse govuk-!-margin-bottom-8",
+      items: [
+        {
+          text: "Home",
+          href: "#"
+        }
+      ]
+    }) }}
+
+  </div>
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Wildlife and biodiversity</h1>
+    <p class="govuk-body-l govuk-!-margin-bottom-8" >Protected species, report a sighting
+
+
+
+</p>
+
+</div>
+      </div>
+</div>
+</div>
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full" data-module="gem-track-click ga4-link-tracker" data-gem-track-click-module-started="true" data-ga4-link-tracker-module-started="true">
+
+      <div class="gem-c-cards">
+      <ul class="gem-c-cards__list" data-track-count="cardList">
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" href="#">Boats and waterways</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Boat registration, boat safety and river levels</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" href="#">Coasts</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Coastal erosion, flood defences, bathing water quality</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" href="#">Countryside</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Countryside Code, access to the countryside, landscape</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" href="#">Farming and land management</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Agriculture, rural payments, imports and exports, workers’ rights, regulations</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" href="#">Fishing and hunting</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Fishing rod licences, permission and byelaws, lawful hunting</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" href="#">Flooding</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Check flood warnings, how to prepare for flooding, and what to do before, during and after flooding</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" href="#">Treasure and wrecks</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Report wreck material and treasure finds</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" href="#">Waste management</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Your responsibilities, hazardous waste and report an environmental incident</p>
+            </div>
+          </li>
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" href="wildlife-biodiversity">Wildlife and biodiversity</a>
+  </h2>              <p class="govuk-body gem-c-cards__description">Protected species, report a sighting</p>
+            </div>
+          </li>
+  </ul>
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

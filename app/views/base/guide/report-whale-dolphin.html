@@ -1,0 +1,173 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Mainstream guide example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a not a real service – it is just for user research.'
+}) }}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Environment and countryside",
+        href: "browse"
+      },
+      {
+        text: "Wildlife and biodiversity",
+        href: "/base/wildlife-biodiversity"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Report an animal sighting
+      </h1>
+
+      <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+        <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+            Contents
+          </h2>
+          <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+<a href="index">
+                Your responsibilities
+</a>
+            </li>
+            <li aria-current="true" class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+  <a href="report-dead-animal">
+              Report a dead or injured animal
+  </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+
+                Report a stranded whale or dolphin
+
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="report-goose-sighting">
+                Report a goose sighting
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+
+      <h2 class="govuk-heading-l">
+        Report a stranded whale or dolphin
+      </h2>
+
+
+
+      <p>Call the Cetacean Strandings Investigation Programme (CSIP) hotline to report a stranded whale or dolphin.</p>
+
+      <h2 class="govuk-heading-m" >
+        If the animal is alive
+      </h2>
+
+      <p>Call the hotline immediately.</p>
+
+
+      {{ govukInsetText({
+        html: '<h3 class="govuk-heading-s" >CSIP stranded whale or dolphin hotline</h3>
+        <P>0800 652 0333</p>
+        <P><a href="#">Find out about call charges</a></p>'
+      }) }}
+
+      <p>
+      Give as much information as possible about the animal’s location and condition to the CSIP.
+      </p>
+
+      <p>
+
+      It’s important to take care when near a stranded dolphin or whale, as the tail is powerful and can cause injury. Gloves should also be worn when handling a living or dead animal.
+      </p>
+      <h2 class="govuk-heading-m" >
+        If the animal is dead
+      </h2>
+      <p>
+
+      If you think the whale or dolphin is dead call the hotline and let them know where you found the animal. To avoid disease, don’t have any contact with the dead animal without the right protective clothing, eg thick rubber gloves.
+      </p>
+
+      <nav class="govuk-prototype-kit-common-templates-pagination" role="navigation" aria-label="Pagination">
+
+      {{ govukPagination({
+        previous: {
+          labelText: "Report a dead or injured animal",
+          href: "report-dead-animal"
+        },
+        next: {
+          labelText: "Report a goose sighting",
+          href: "report-goose-sighting"
+        }
+      }) }}
+
+      <p>
+        <a href="#">
+          View a printable version of the whole guide
+        </a>
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Report an environmental incident
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Find your local park
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+
+
+
+
+    </div>
+
+
+{% endblock %}

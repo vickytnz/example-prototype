@@ -1,0 +1,90 @@
+{% set pageTitle = "Check your answers before sending your application" %}
+{% set hideBack = true %}
+{% extends "/" + folder + "/" + subfolder + "/_BASE.html" %}
+
+{% block form %}
+      <h1 class="govuk-heading-l">
+        {{pageTitle}}
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "You like geese"
+            },
+            value: {
+              text:  data['geese-liked']
+            },
+            actions: {
+              items: [
+                {
+                  href: "geese-liked",
+                  text: "Change",
+                  visuallyHiddenText: "if you like geese"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Type of goose that you saw"
+            },
+            value: {
+              text: data['goose-type']
+            },
+            actions: {
+              items: [
+                {
+                  href: "goose-type",
+                  text: "Change",
+                  visuallyHiddenText: "type of goose that you saw"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date that you saw the goose"
+            },
+            value: {
+              text: data['date-saw-goose-day'] | default("12") | safe  + " " +  data['date-saw-goose-month'] | default('12') | monthToWords | safe   +   " " +  data['date-saw-goose-year'] | default('2004')
+            },
+            actions: {
+              items: [
+                {
+                  href: "date-saw-goose",
+                  text: "Change",
+                  visuallyHiddenText: "date that you saw the goose"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Now send your application
+      </h2>
+
+      <p>
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+
+      {{ govukDetails({
+       summaryText: "What happens with my data?",
+       text: "Nothing - this doesn't actually do or collect anything. You'll have to store your own goose records unfortunately."
+     }) }}
+
+      <form action="/{{folder}}/{{subfolder}}/confirmation" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+
+      </form>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% set serviceName = "Report a goose sighting" %}
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{pageTitle}} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a not a real service – it is just for user research.'
+}) }}
+
+{% if not hideBack%}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    {% block form %}
+
+{% endblock %}
+    </div>
+  </div>
+
+{% endblock %}

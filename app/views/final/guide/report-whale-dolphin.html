@@ -1,0 +1,42 @@
+{% set currentPage = 3 %}
+{% extends "/final/guide/_BASE.html" %}
+
+{% block guide %}
+
+
+
+
+      <p>Call the Cetacean Strandings Investigation Programme (CSIP) hotline to report a stranded whale or dolphin.</p>
+
+      <h2 class="govuk-heading-m" >
+        If the animal is alive
+      </h2>
+
+      <p>Call the hotline immediately.</p>
+
+
+      {{ govukInsetText({
+        html: '<h3 class="govuk-heading-s" >CSIP stranded whale or dolphin hotline</h3>
+        <P>0800 652 0333</p>
+        <P><a href="#">Find out about call charges</a></p>'
+      }) }}
+
+      <p>
+      Give as much information as possible about the animal’s location and condition to the CSIP.
+      </p>
+
+      <p>
+
+      It’s important to take care when near a stranded dolphin or whale, as the tail is powerful and can cause injury. Gloves should also be worn when handling a living or dead animal.
+      </p>
+      <h2 class="govuk-heading-m" >
+        If the animal is dead
+      </h2>
+      <p>
+
+      If you think the whale or dolphin is dead call the hotline and let them know where you found the animal. To avoid disease, don’t have any contact with the dead animal without the right protective clothing, eg thick rubber gloves.
+      </p>
+
+
+
+{% endblock %}

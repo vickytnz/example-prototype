@@ -1,0 +1,33 @@
+{% set pageTitle = "When did you see the goose?" %}
+{% extends "/" + folder + "/" + subfolder + "/_BASE.html" %}
+
+{% block form %}
+
+      <form class="form" action="check-answers" method="post">
+
+        {{ govukDateInput({
+        id: "date-saw-goose",
+        namePrefix: "date-saw-goose",
+        fieldset: {
+          legend: {
+            text: pageTitle,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2007"
+        }
+      }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+
+
+      </form>
+
+
+{% endblock %}

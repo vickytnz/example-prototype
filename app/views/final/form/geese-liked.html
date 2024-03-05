@@ -1,0 +1,44 @@
+{% set pageTitle = "Do you like geese?" %}
+{% extends "/" + folder + "/" + subfolder + "/_BASE.html" %}
+
+{% block form %}
+
+      <form class="form" action="goose-type" method="post">
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "geese-liked",
+          name: "geese-liked",
+          fieldset: {
+            legend: {
+              text: pageTitle,
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select yes if you like geese"
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+
+
+      </form>
+
+
+{% endblock %}

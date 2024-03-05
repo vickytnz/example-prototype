@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl">
+    Final version with templating
+    </h1>
+
+
+<p>This version has:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>links using variables of the current folder and sub-folder for easy copying and changing</li>
+    <li>a macro on the browse page to generate the tiles</li>
+    <li>an iterator on the topics page to create a consistent list of links</li>
+    <li>a template set up for the guide to keep page titles, headers and footers consistent</li>
+    <li>a template for the form pages to keep headers and page titles consistent (with states for back links)</li>
+    <li>a filter to change the date month from a number to the month</li>
+    </ul>
+
+
+    <h2 class="govuk-heading-m">List of pages</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="/{{folder}}/browse">Browse</a>
+      </li>
+      <li>
+          <a class="govuk-link" href="/{{folder}}/wildlife-biodiversity">Wildlife biodiversity</a>
+
+
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a class="govuk-link" href="/{{folder}}/guide/index">Your responsibilities</a></li>
+          <li><a class="govuk-link" href="/{{folder}}/guide/report-dead-animal">Report a dead animal</a></li>
+          <li><a class="govuk-link" href="/{{folder}}/guide/report-whale-dolphin">Report beached whale or dolphin</a></li>
+          <li><a class="govuk-link" href="/{{folder}}/guide/report-goose-sighting">Report a goose sighting</a>
+
+  <ul class="govuk-list govuk-list--bullet">
+
+    <li><a class="govuk-link" href="/{{folder}}/form/geese-liked">Do you like geese?</a></li>
+    <li><a class="govuk-link" href="/{{folder}}/form/goose-type">What type of goose was it?</a></li>
+    <li><a class="govuk-link" href="/{{folder}}/form/date-saw-goose">When did you see the goose?</a></li>
+    <li><a class="govuk-link" href="/{{folder}}/form/check-answers">Check answers</a></li>
+    <li><a class="govuk-link" href="/{{folder}}/form/confirmation">Confirmation</a></li>
+    </ul>
+
+
+
+          </li>
+            </ul>
+      </li>
+
+    </ul>
+
+
+  </div>
+</div>
+
+{% endblock %}

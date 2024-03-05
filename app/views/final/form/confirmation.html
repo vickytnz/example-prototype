@@ -1,0 +1,25 @@
+{% set pageTitle = "Report complete" %}
+{% set hideBack = true %}
+{% extends "/" + folder + "/" + subfolder + "/_BASE.html" %}
+
+
+{% block form %}
+
+      {{ govukPanel({
+        titleText: "Report complete",
+        html: "Your reference number<br><strong>HDJ2123F</strong>"
+      }) }}
+
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        We've sent your application to the RSPD.
+      </p>
+
+      <P><a href="/{{folder}}/guide/report-goose-sighting">Back to GOV.UK</a></p>
+
+
+{% endblock %}

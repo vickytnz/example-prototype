@@ -1,0 +1,26 @@
+{% set currentPage = 4 %}
+{% extends "/final/guide/_BASE.html" %}
+
+{% block guide %}
+
+
+    <p>If you want, you can report a goose sighting.</p>
+      <p>Tell us:</p>
+
+
+         <ul class="govuk-list govuk-list--bullet">
+           <li>if you like geese</li>
+           <li>what type of goose you saw</li>
+           <li>the date on which you saw the goose</li>
+         </ul>
+
+         {{ govukButton({
+           text: "Report a goose sighting",
+           href: "/" + folder + "/form/geese-liked",
+           isStartButton: true
+         }) }}
+
+
+
+
+{% endblock %}

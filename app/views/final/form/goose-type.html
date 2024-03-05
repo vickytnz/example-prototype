@@ -1,0 +1,29 @@
+{% set pageTitle = "What type of goose was it?" %}
+{% extends "/" + folder + "/" + subfolder + "/_BASE.html" %}
+
+{% block form %}
+
+
+      <form class="form" action="date-saw-goose" method="post">
+
+        {{ govukInput({
+    label: {
+      text: pageTitle,
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    id: "goose-type",
+    name: "goose-type"
+  }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+
+
+      </form>
+
+
+{% endblock %}

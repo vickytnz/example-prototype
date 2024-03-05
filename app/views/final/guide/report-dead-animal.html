@@ -1,0 +1,79 @@
+{% set currentPage = 2 %}
+{% extends "/final/guide/_BASE.html" %}
+
+{% block guide %}
+
+
+
+
+      <p>What you need to do depends on the type of animal, and whether you were involved in an accident with it.
+</p>
+
+      <h2 class="govuk-heading-m" >
+        Report a car accident with an animal
+
+      </h2>
+
+      <p>You must stop and report the accident to the police if you hit any:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>dogs
+</li><li>horses
+</li><li>cattle, eg cows
+</li><li>pigs
+</li><li>goats
+</li><li>sheep
+</li><li>donkeys and mules
+  </li>
+</ul>
+<p>You must do this as quickly as you can, whether the animal is killed or not.</p>
+
+  <h2 class="govuk-heading-m" >
+      Report a dead animal to your local council
+        </h2>
+    <p>  You can report any dead animals you find on the road to the local council.</p>
+
+      <p>This includes wild animals like badgers and foxes, as well as domestic pets such as cats and dogs.</p>
+
+  <h2 class="govuk-heading-m" >
+      What you need to know
+</h2>
+      <p>
+      Give as much information as possible about the animal’s location and condition to the CSIP.
+      </p>
+
+      <p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>available in England and Wales only - contact your local council in <a href="#">Scotland</a> and <a href="#">Northern Ireland</a></li>
+  </ul>
+
+          </p>
+      <h2 class="govuk-heading-m" >
+        Report an injured animal
+
+      </h2>
+      <p>
+
+      Report an injured animal to the RSPCA in England or Wales or its equivalent in Scotland or Northern Ireland.      </p>
+
+      {{ govukInsetText({
+        html: '<h3 class="govuk-heading-s" >RSPCA</h3>
+        <P>Telephone: 0300 1234 999</p>
+        <P><a href="#">Find out about call charges</a></p>'
+      }) }}
+
+
+            {{ govukInsetText({
+              html: '<h3 class="govuk-heading-s" >Scottish Society for the Prevention of Cruelty to Animals (SSPCA)</h3>
+              <P>Telephone: 03000 999 999</p>
+              <P><a href="#">Find out about call charges</a></p>'
+            }) }}
+
+
+                  {{ govukInsetText({
+                    html: '<h3 class="govuk-heading-s" >Ulster Society for the Prevention of Cruelty to Animals (USPCA)</h3>
+                    <P>Telephone: 028 3025 1000</p>
+                    <P><a href="#">Find out about call charges</a></p>'
+                  }) }}
+
+
+{% endblock %}

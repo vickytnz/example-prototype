@@ -3,9 +3,8 @@
 {% extends "/" + folder + "/" + subfolder + "/_BASE.html" %}
 
 {% block form %}
-      <h1 class="govuk-heading-l">
-        {{pageTitle}}
-      </h1>
+
+{{ pageTitle | headingH1 | safe  }}
 
       {{ govukSummaryList({
         rows: [
@@ -14,7 +13,7 @@
               text: "You like geese"
             },
             value: {
-              text:  data['geese-liked']
+              text:  data['geese-liked'] or 'Yes'
             },
             actions: {
               items: [
@@ -32,7 +31,7 @@
               text: "Type of goose that you saw"
             },
             value: {
-              text: data['goose-type']
+              text: data['goose-type'] or 'Mallard'
             },
             actions: {
               items: [
@@ -50,7 +49,7 @@
               text: "Date that you saw the goose"
             },
             value: {
-              text: data['date-saw-goose-day'] | default("12") | safe  + " " +  data['date-saw-goose-month'] | default('12') | monthToWords | safe   +   " " +  data['date-saw-goose-year'] | default('2004')
+              text: (data['date-saw-goose-day'] or "12") | safe  + " " +  (data['date-saw-goose-month'] or '12') | monthToWords | safe   +   " " +  (data['date-saw-goose-year'] or '2004')
             },
             actions: {
               items: [

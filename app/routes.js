@@ -24,7 +24,7 @@ console.log('folder : ' + res.locals.folder + ', subfolder : ' + res.locals.subf
   next();
 });
 
-// log stuff 
+// log stuff
 
 router.use((req, res, next) => {
 
@@ -39,4 +39,4 @@ router.use((req, res, next) => {
   })
 
 router.use('/base', require('./views/base/\_routes'));
-router.use('/final', require('./views/final/\_routes'));
+// router.use('/final', require('./views/final/\_routes'));

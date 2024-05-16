@@ -1,8 +1,9 @@
 {% set serviceName = "" %}
+{% set pageTitle = "Wildlife and biodiversity" %}
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  GOV.UK page template – {{ pageTitle }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -41,7 +42,8 @@
   </div>
     <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Wildlife and biodiversity</h1>
+    {{ pageTitle | headingH1('xl') | safe }}
+
     <p class="govuk-body-l govuk-!-margin-bottom-8" >Protected species, report a sighting
 
 

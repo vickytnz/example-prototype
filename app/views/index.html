@@ -7,13 +7,10 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+{{ serviceName | headingH1("xl") | safe  }}
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+<p>This may not be much to look at from the screens, but where it gets interesting is in the code:<a href="https://github.com/vickytnz/example-prototype"> <code>https://github.com/vickytnz/example-prototype</code></a></p>
 
     <ul class="govuk-list govuk-list--bullet">
       <li>

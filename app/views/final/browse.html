@@ -2,7 +2,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Environment and wildlife – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -37,10 +37,10 @@
   </div>
     <div class="govuk-grid-column-full-width">
 
-
-    {{ 'Environment and countryside' | headingH1('xl') | safe }}
-
+    <h1 class="govuk-heading-xl">Environment and wildlife</h1>
     <p class="govuk-body-l govuk-!-margin-bottom-8" >Includes flooding, recycling, farming and wildlife
+
+
 
 
 
@@ -66,6 +66,7 @@
 {% block content %}
 
 
+
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full" data-module="gem-track-click ga4-link-tracker" data-gem-track-click-module-started="true" data-ga4-link-tracker-module-started="true">
@@ -73,17 +74,16 @@
       <div class="gem-c-cards">
       <ul class="gem-c-cards__list" data-track-count="cardList">
 
-
-        {% macro govUKCard(title='', description='', href='#') %}
-        <li class="gem-c-cards__list-item">
-          <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link" href="{{href}}">{{title}}</a>
+{% macro govUKCard(title='', description='', href='#')%}
+<li class="gem-c-cards__list-item">
+  <div class="gem-c-cards__list-item-wrapper">
+    <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+      <a class="govuk-link gem-c-cards__link" href="{{href}}">{{title}}</a>
 </h2>              <p class="govuk-body gem-c-cards__description">{{description}}</p>
-          </div>
-        </li>
-        {% endmacro %}
+  </div>
+</li>
 
+{% endmacro%}
 
 {{ govUKCard(title="Boats and waterwards", description="Boat registration, boat safety and river levels") }}
 {{ govUKCard(title="Coasts", description="Coastal erosion, flood defences, bathing water quality") }}
@@ -94,8 +94,6 @@
 {{ govUKCard(title="Treasure and wrecks", description="Report wreck material and treasure finds") }}
 {{ govUKCard(title="Waste management", description="Your responsibilities, hazardous waste and report an environmental incident") }}
 {{ govUKCard(title="Wildlife and biodiversity", description="Protected species, report a sighting", href="wildlife-biodiversity") }}
-
-
   </ul>
   </div>
 

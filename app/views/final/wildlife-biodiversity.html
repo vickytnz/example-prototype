@@ -1,9 +1,8 @@
 {% set serviceName = "" %}
-{% set pageTitle = "Wildlife and biodiversity" %}
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  GOV.UK page template – {{ pageTitle }} – GOV.UK Prototype Kit
+  Wildlife and biodiversity – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -34,7 +33,7 @@
         },
         {
           text: "Environment and the countryside",
-          href: "/" + folder + "/browse"
+          href: "browse"
         }
       ]
     }) }}
@@ -42,8 +41,7 @@
   </div>
     <div class="govuk-grid-column-two-thirds">
 
-    {{ pageTitle | headingH1('xl') | safe }}
-
+    <h1 class="govuk-heading-xl">Wildlife and biodiversity</h1>
     <p class="govuk-body-l govuk-!-margin-bottom-8" >Protected species, report a sighting
 
 
@@ -74,26 +72,28 @@
 
   <div class="govuk-grid-column-{% if fullWidth %}full-width{% else %}two-thirds{% endif %}">
 
-  <h2 class="govuk-heading-m">A to Z</h2>
 
 
 
+{% set list = [
+
+  {title: "Find protected areas of countryside", href: "#" },
+{title: "Licence to release non-native wildlife and plants", href: "#" },
+{title: "Managing wildlife on your land", href: "#" },
+{title: "Report an animal sighting", href: "guide/index" },
+{title: "Wildlife licence (Northern Ireland)", href: "#" }
+
+  ]%}
 
 
-{% set list  = [{title: "Find protected areas of countryside", href: "#"}, {title: "Licence to release non-native wildlife and plants", href: "#"}, {title: "Managing wildlife on your land", href: "#"}, {title: "Report an animal sighting", href: "guide/index"}, {title: "Wildlife licence (Northern Ireland)", href: "#"}] %}
-
-
-
+<h2 class="govuk-heading-m">A to Z</h2>
 
 <ul class="govuk-list">
-
-  {% for object in list %}
-<li class="govuk-!-margin-bottom-4"><a href="{{object.href}}">{{object.title}}</a></li>
+{% for object in list %}
+  <li class="govuk-!-margin-bottom-4"><a href="{{object.href}}">{{object.title}}</a></li>
 
 {% endfor %}
 </ul>
-
-
 
   </div>
 </div>

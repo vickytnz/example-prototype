@@ -8,15 +8,7 @@ const addFilter = govukPrototypeKit.views.addFilter
 
 // Add your filters here
 
-// headers
-
-addFilter('monthToWords', function (month) {
-      var monthsList = ["January", "February" , "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      var words = monthsList[month - 1];
-      return words;
-  })
-
-
+// headers, use 'safe' after - to use extra settings just do in order for example {{text | headingH1('xl') | safe }}
 addFilter('headingH1', function(word, size='l', margin=''){ //default is h1 with l styling = for a filter you don't use the name of the variable, just the position
 
 var words =   '<h1 class="govuk-heading-' + size + '" margin >' + word  + '</h1>';
@@ -46,3 +38,11 @@ var words =   '<h4 class="govuk-heading-' + size + ' margin ">' + word  + '</h4>
 
   return words;
 })
+
+// monthstowords
+
+addFilter('monthToWords', function (month) {
+      var monthsList = ["January", "February" , "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      var words = monthsList[month - 1]; // arrays start at 0 not 1, assuming valid month for prototype
+      return words;
+  })

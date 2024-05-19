@@ -5,8 +5,6 @@
   {{pageTitle}} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-
-
 {% block beforeContent %}
 {{ govukPhaseBanner({
   tag: {
@@ -15,24 +13,28 @@
   html: 'This is a not a real service – it is just for user research.'
 }) }}
 
-{% if not hideBack%}
+
+{% if not hideBack %} <!-- function to hide back link -->
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
-
 {% endif %}
-{% endblock %}
 
+{% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    {% block form %}
+{% block form%}
+
+Form content here
 
 {% endblock %}
+
+
     </div>
   </div>
 

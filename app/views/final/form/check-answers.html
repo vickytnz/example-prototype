@@ -1,10 +1,10 @@
 {% set pageTitle = "Check your answers before sending your application" %}
+{% extends "/"  + folder +  "/" + subfolder + "/_BASE.html" %}
 {% set hideBack = true %}
-{% extends "/" + folder + "/" + subfolder + "/_BASE.html" %}
-
 {% block form %}
 
-{{ pageTitle | headingH1 | safe  }}
+  {{ pageTitle | headingH1 | safe }}
+
 
       {{ govukSummaryList({
         rows: [
@@ -13,7 +13,7 @@
               text: "You like geese"
             },
             value: {
-              text:  data['geese-liked'] or 'Yes'
+              text:  data['geese-liked']
             },
             actions: {
               items: [
@@ -31,7 +31,7 @@
               text: "Type of goose that you saw"
             },
             value: {
-              text: data['goose-type'] or 'Mallard'
+              text: data['goose-type']
             },
             actions: {
               items: [
@@ -49,7 +49,7 @@
               text: "Date that you saw the goose"
             },
             value: {
-              text: (data['date-saw-goose-day'] or "12") | safe  + " " +  (data['date-saw-goose-month'] or '12') | monthToWords | safe   +   " " +  (data['date-saw-goose-year'] or '2004')
+              text: (data['date-saw-goose-day'] or '31') +  " " + (data['date-saw-goose-month'] or '12') | monthToWords +   " " +  (data['date-saw-goose-year'] or '2025')
             },
             actions: {
               items: [
@@ -64,9 +64,9 @@
         ]
       }) }}
 
-      <h2 class="govuk-heading-m">
-        Now send your application
-      </h2>
+
+        {{ "Now send your application" | headingH2 | safe }}
+
 
       <p>
         By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.

@@ -1,12 +1,11 @@
-{# set currentPage with a number to trigger the guide #}
-{% set guideTitle = "Report an animal sighting"%}
-{% set pages = [{title: "Your responsibilities", href: "index" }, {title: "Report a dead or injured animal", href: "report-dead-animal"} , {title: "Report a stranded whale or dolphin", href: "report-whale-dolphin"} , {title: "Report a goose sighting", href: "report-goose-sighting" }] %}
 {% extends "layouts/main.html" %}
-
+{% set guideTitle = "Report an animal sighting" %}
 {% if not currentPage %}{% set currentPage = 3 %}{% endif %}
 
+{% set pages = [{title: "Your responsibilities", href: "index" }, {title: "Report a dead or injured animal", href: "report-dead-animal"} , {title: "Report a stranded whale or dolphin", href: "report-whale-dolphin"} , {title: "Report a goose sighting", href: "report-goose-sighting" }] %}
+
 {% block pageTitle %}
-{% for item in pages %}{% if currentPage == loop.index %}{{item.title}}{% endif %}{% endfor %} - {{guideTitle}} - GOV.UK
+  {{guideTitle}}:{% for item in pages %}{% if currentPage == loop.index %}{{item.title}}{% endif %}{% endfor %}  - GOV.UK prototype kit
 {% endblock %}
 
 {% block header %}
@@ -22,7 +21,6 @@
   },
   html: 'This is a not a real service – it is just for user research.'
 }) }}
-
   {{ govukBreadcrumbs({
     items: [
       {
@@ -31,11 +29,11 @@
       },
       {
         text: "Environment and countryside",
-        href: "/" + folder + "/browse"
+        href: "/base/browse"
       },
       {
         text: "Wildlife and biodiversity",
-        href:  "/" + folder + "/wildlife-biodiversity"
+        href: "/base/wildlife-biodiversity"
       }
     ]
   }) }}
@@ -47,8 +45,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
-{{ guideTitle | headingH1('xl') | safe  }}
+      <h1 class="govuk-heading-xl">
+      {{guideTitle}}
+      </h1>
 
       <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
         <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
@@ -57,17 +56,17 @@
           </h2>
           <ol class="govuk-prototype-kit-common-templates-contents-list__list">
 
- {%- for item in pages %}
+{%- for item in pages %}
 
- <li aria-current="true" class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed {% if currentPage == loop.index %}govuk-prototype-kit-common-templates-contents-list__list-item--active{% endif %}">
+<li aria-current="true" class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed {% if currentPage == loop.index %}govuk-prototype-kit-common-templates-contents-list__list-item--active{% endif %}">
 {% if not (currentPage == loop.index) %} <a href="{{item.href}}">{% endif %}
-   {{item.title}} <!-- {{loop.index}} -->
+{{item.title}} <!-- {{loop.index}} -->
 {% if not (loop.index == currentPage) %}</a>{% endif %}
- </li>
+</li>
 
- {%- endfor %}
+{%- endfor %}
 
-          </ol>
+</ol>
         </nav>
       </aside>
 
@@ -79,28 +78,24 @@
     <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
 
       <h2 class="govuk-heading-l">
-
         {% for item in pages %}
-        {% if currentPage == loop.index %}{{item.title}}{% endif %}
-        {% endfor %}
+       {% if currentPage == loop.index %}{{item.title}}{% endif %}
+       {% endfor %}
       </h2>
 
-
 {% block guide %}
-
-
-
+<p>Content here </p>
 {% endblock %}
 
-      <nav class="govuk-prototype-kit-common-templates-pagination" role="navigation" aria-label="Pagination">
+<nav class="govuk-prototype-kit-common-templates-pagination" role="navigation" aria-label="Pagination">
 
 {% if currentPage == 1  %}
 
 {{ govukPagination({
-  next: {
-    labelText: pages[2].title,
-    href: pages[2].href
-  }
+next: {
+labelText: pages[2].title,
+href: pages[2].href
+}
 }) }}
 
 {% elif currentPage ==  (page.length + 1) %}
@@ -108,10 +103,10 @@
 {% set  prev = (currentPage - 2) %}
 
 {{ govukPagination({
-    previous: {
-        labelText: pages[prev].title,
-        href: pages[prev].href
-      }
+previous: {
+  labelText: pages[prev].title,
+  href: pages[prev].href
+}
 }) }}
 
 {% else %}
@@ -119,17 +114,18 @@
 {% set next = (currentPage) %}
 
 
-        {{ govukPagination({
-          previous: {
-            labelText: pages[prev].title,
-              href: pages[prev].href
-          },
-          next: {
-            labelText: pages[next].title,
-            href: pages[next].href
-          }
-        }) }}
+  {{ govukPagination({
+    previous: {
+      labelText: pages[prev].title,
+        href: pages[prev].href
+    },
+    next: {
+      labelText: pages[next].title,
+      href: pages[next].href
+    }
+  }) }}
 {% endif %}
+
       <p>
         <a href="#">
           View a printable version of the whole guide
